@@ -5,22 +5,10 @@ int main(){
     list.push_front(5);
     list.push_front(45);
     list.push_front(9);
-    //1 45 5 1
-    //list.insert_num_before_even(10);
     list.show_list();
-    //list.remove_max();
-    //list.clear();
     std::cout << '\n';
-    std::cout << "before\n";
+    list.insert_num_before_even(37);
     list.show_list();
-    list.move_last_to_start();
-    std::cout << "after\n";
-    list.show_list();
-    //list.show_list();
-    //std::cout << '\n' << list.check_equal();
-    //для информационных источников
-    //http://www.opita.net
-    //https://stackoverflow.com
-    //https://en.cppreference.com
+    
     return 0;
 }

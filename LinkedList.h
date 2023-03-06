@@ -2,6 +2,7 @@
 #include <iostream>
 #include <algorithm>
 struct Node{
+    //base structure
     int data;
     Node* next;
 
@@ -21,6 +22,7 @@ struct Node{
 
 struct LinkedList
 {
+    //structure of list
     Node *head;
     LinkedList(){
         this->head = nullptr;
@@ -29,11 +31,13 @@ struct LinkedList
         while(head != nullptr)  pop_front();
     }
     void push_front(int data){
+        //push node with data before first elemet of current list (support)
         Node *new_node = new Node(data);
         new_node->next = head;
         head = new_node;
     }
     void remove_max(){
+        //remove element with maximum data
         int cur_max = std::numeric_limits<int>::min();
         Node *ptr = new Node();
         Node *max_ptr = new Node();
@@ -48,14 +52,16 @@ struct LinkedList
     }
 
     void pop_front(){
-        //delete head;
+        //delete first element in list (support)
         head = head->next;
     }
     void clear(){
+        //clear list (support)
         while (head != nullptr) pop_front();
     }
 
     void insert_num_before_even(int data){
+        //insert node with data before all even(in start list) node
         int cur_index = 0;
         for (Node* node = head; node != nullptr; node=node->next, ++cur_index){
             if (cur_index % 2 == 0){
@@ -68,6 +74,7 @@ struct LinkedList
         }
     }
     bool check_equal(){
+        //check, there are two equel element in list
         Node *first_ptr = head;
         while (first_ptr != nullptr){
             Node *second_ptr = first_ptr->next;
@@ -82,10 +89,12 @@ struct LinkedList
         return false;
     }
     void show_list(){
+        //show all list (support from task)
         for (Node* node = head; node != nullptr; node=node->next)
             std::cout << node->data << ' ';
     }
     void move_last_to_start(){
+        //move last element to start(last element will be first, head = old last element) (support from task)
         Node *node = head;
         for (; node->next->next != nullptr; node=node->next) {}
         node->next->next = head;
