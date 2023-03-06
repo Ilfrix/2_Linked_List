@@ -85,4 +85,11 @@ struct LinkedList
         for (Node* node = head; node != nullptr; node=node->next)
             std::cout << node->data << ' ';
     }
+    void move_last_to_start(){
+        Node *node = head;
+        for (; node->next->next != nullptr; node=node->next) {}
+        node->next->next = head;
+        head = node->next;
+        node->next = nullptr;
+    }
 };

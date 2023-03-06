@@ -4,14 +4,17 @@ int main(){
     list.push_front(1);
     list.push_front(5);
     list.push_front(45);
-    list.push_front(1);
+    list.push_front(9);
     //1 45 5 1
     //list.insert_num_before_even(10);
     list.show_list();
-    list.remove_max();
+    //list.remove_max();
     //list.clear();
     std::cout << '\n';
-    std::cout << "clear list\n";
+    std::cout << "before\n";
+    list.show_list();
+    list.move_last_to_start();
+    std::cout << "after\n";
     list.show_list();
     //list.show_list();
     //std::cout << '\n' << list.check_equal();
